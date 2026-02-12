@@ -8,8 +8,8 @@ library(ggplot2)
 
 ##############Experiment data1
 ### Load data
-
-data<-AGI_study_1_data
+# kiwi: edit loading data to work (add read.csv and change file name to match)
+data<-read.csv("AGI_study_1_data.csv")
 #Exclude trial exclusions
 data<-subset(data,Include=="y")
 
@@ -49,7 +49,7 @@ summary(fluency)
 lsmeansLT(fluency)
 difflsmeans(fluency)
 
-index.speech<-glmer(index.speech~Condition+(Condition|Participant)+(Condition|Trial),family=binomial,data=data)
+ index.speech<-glmer(index.speech~Condition+(Condition|Participant)+(Condition|Trial),family=binomial,data=data)
 summary(index.speech)
 
 
